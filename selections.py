@@ -43,3 +43,35 @@ match age:
     case _:
         print("No match.")
 
+name = "David"
+age = 18
+
+if age >= 25 or name == "Damien":
+    print("You are a pretty cool guy.")
+
+if not name.isalpha():
+    print("The name is not valid.")
+
+age = 19
+
+if age <= 18:
+    age_description = "young"
+else:
+    age_description = "old"
+
+#age_description: str = "young" if age <= 18 else "old"
+
+print(f"{name} you are {"young" if age <= 18 else "old"}.")
+
+names = ["Damien", "James", "Kirk", "Rob"]
+
+name = "James"
+
+# Membership operator (in, not in)
+if name in names:
+    print("You are in the band.")
+else:
+    print("You are not allowed to be backstage.")
+
+if name not in names:
+    print("You are not part of the group.")
