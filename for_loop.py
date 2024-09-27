@@ -38,3 +38,6 @@ hockey_teams = {
     "calgary": "flames",
     "edmonton": "oilers"
 }
+
+for number in range(0, 100, 5):
+    print(number)
