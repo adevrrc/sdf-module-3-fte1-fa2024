@@ -1,77 +1,119 @@
 """
 Description: A script to demonstrate selections.
-Author:
-Date:
+Author: Damien Altenburg
+Date: 2024-9-23
 Usage: python selections.py
 """
-
-age: int = 35
+age: int = 25
 name: str = "Damien"
 
+# Syntax
+# if boolean_expression:
+#     Statements when expression is true
 if age == 25:
-    # Block starts here
-    print(f"You are {age}")
-    # Block end here
+    print(f"The number is {age}")
 
-print("This is not part of the if statement.")
+print("This statement is not part of the if block.")
 
-if age < 25:
-    print("You are young.")
+# Syntax
+# if boolean_expression:
+#     Statements when the expression is True
+# else:
+#     Statements when the expression is False
+if age > 25:
+    print("You are older.")
 else:
-    print("You are old")
+    print("You are younger.")
 
-print("This is not part of the if statement.")
-
-age = 30
-
+# Syntax
+# if boolean_expression:
+#     Statements when the expression is True
+# elif boolean_expression:
+#     Statements when the expression is True
 if age == 30:
-    print("You have been alive for three decades.")
+    print("You are 30.")
 elif age == 40:
-    print("You have been alive for four decades.")
-elif name == "Damien":
-    print("Hello Damien")
+    print("You are 40.")
+
+# The following may look similar, but is different logic
+if age == 30:
+    print("You are 30.")
+
+if age == 40:
+    print("You are 40.")
+
+# Syntax
+# if boolean_expression:
+#     Statements when the expression is True
+# elif boolean_expression:
+#     Statements when the expression is True
+# else:
+#     Statements when all expressions are False
+if age >= 10:
+    print("The number is 10 or higher.")
+elif age != 5:
+    print("Less than 10, but not 5.")
 else:
-    print("None of the other conditions were met.")
+    print("The number is 5.")
 
-match age:
-    case 30:
-        print("You are thirty.")
-    case 40:
-        print("You are forty.")
-    case 50:
-        print("You are fifty.")
-    case _:
-        print("No match.")
+# Logical Operators (and, or, not)
+# Syntax
+# if boolean_expression operator boolean_expression:
+#     Statements when the expression is True
+if age >= 25 and name == "Damien":
+    print("You are super cool.")
 
-name = "David"
-age = 18
-
-if age >= 25 or name == "Damien":
-    print("You are a pretty cool guy.")
+if age > 50 or name == "Damien":
+    print("Still super cool.")
 
 if not name.isalpha():
-    print("The name is not valid.")
+    print("Invalid name.")
 
-age = 19
+# Short-circuiting
+if age == 50 and name == "Damien":
+    print("Age: 50, Name: Damien")
 
-if age <= 18:
-    age_description = "young"
+# Nested Selections
+if age > 25:
+    print("Age is greater than 25")
+
+    if age == 50:
+        print("You are 50.")
 else:
-    age_description = "old"
+    print("You are young.")
 
-#age_description: str = "young" if age <= 18 else "old"
+# Conditional Operator
+# Syntax
+# operand if operand else operand
+# value if boolean_expression else value
+age_description: str = "old" if age > 25 else "young"
 
-print(f"{name} you are {"young" if age <= 18 else "old"}.")
+print(f"You're {age_description}")
 
-names = ["Damien", "James", "Kirk", "Rob"]
+names: list[str] = ["kenny", "jon", "max", "chris", "saraya"]
+name: str = "jason"
 
-name = "James"
+# Membership Operators
+# Syntax
+# value in collection_reference
+# value not in collection_reference
+negator: str = "" if name in names else "not "
 
-# Membership operator (in, not in)
-if name in names:
-    print("You are in the band.")
-else:
-    print("You are not allowed to be backstage.")
+print(f"{name.title()} is {negator}in the list.")
 
-if name not in names:
-    print("You are not part of the group.")
+# Match
+match name:
+    case "kenny":
+        message = "You are Mr. Omega"
+    case "jon":
+        message = "Your last name is Moxley"
+    case "max":
+        message = "Hello Mr. Caster"
+    # "jason" or "chris"
+    case "jason" | "chris":
+        message = "I don't know you, but I still think you're cool."
+    # default case (optional)
+    case _:
+        message = "Sorry, no special greeting for you."
+
+print(message)
