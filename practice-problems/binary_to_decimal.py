@@ -8,16 +8,17 @@ Author: Damien Altenburg
 Date: 2024-10-2
 Usage: python binary_to_decimal.py
 """
-binary_number = input("Enter binary number: ")
 
-decimal_number = 0
+binary_number: str = input("Enter binary number: ")
+
+decimal_number: float = 0
 exponent = len(binary_number)
 
 for digit in binary_number:
-    binary_digit = int(digit)
+    binary_digit: int = int(digit)
 
     exponent -= 1
 
-    decimal_number += binary_digit * 2 ** exponent
+    decimal_number += binary_digit * 2**exponent
 
 print(f"The {binary_number} in decimal is {decimal_number}.")
